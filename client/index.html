@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <title>ToDoList</title>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12">
+        <form class="row g-5">
+          <div class="col-7 col-sm-7 col-md-8 col-lg-9">
+            <input type="text" class="form-control" id="inputTask" placeholder="Введите новую задачу">
+          </div>
+          <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-end">
+            <div class="btn-group">
+              <button type="submit" id="formBtnAddTask" class="btn btn-primary">Добавить задачу</button>
+              <button type="button" id="dropdown-Btn"
+                class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu" id="selectChooseColor">
+                
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row my-5">
+      <div class="col-12">
+        <ul class="list-group" id="listTask">
+
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-4 justify-content-between">
+      <div class="col-12 col-lg-7 col-xxl-6 text-center">
+        <div class="btn-group" role="group" id="selectFilter" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-primary" id="btnShowAll">Показать все</button>
+          <button type="button" class="btn btn-outline-primary" id="btnShowCheck">Выполненные</button>
+          <button type="button" class="btn btn-outline-primary" id="btnShowUncheck">Невыполненные</button>
+        </div>
+      </div>
+      <div class="col-6 my-4 col-lg-3 my-lg-0">
+        <button type="button" id="btnDeleteCheckedTasks" class="btn btn-success">
+          <i class="bi bi-check-circle"></i> Удалить
+          выполненные
+          задачи</button>
+          
+      </div>
+      <div class="col-5 my-4 col-md-6 col-lg-2 my-lg-0 col-xxl-3 text-end">
+        <button type="button" id="btnDeleteAllTasks" class="btn btn-danger">
+          <i class="bi bi-trash"></i> Очистить список
+          задач</button>
+      </div>
+
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <nav>
+          <ul class="pagination justify-content-center" id="paginator">
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modalDeleteCheckedTasks" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Подтверждение</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Вы уверены, что хотите удалить выполненные задачи?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+          <button type="button" id="modalBtnDeleteCheckedTasks" class="btn btn-primary" data-bs-dismiss="modal">Да</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modalDeleteAllTasks" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Подтверждение</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Вы уверены, что хотите удалить все задачи?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+          <button type="button" id="modalBtnDeleteAllTasks" class="btn btn-primary" data-bs-dismiss="modal">Да</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="scriptToDoList.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
